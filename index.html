@@ -14,8 +14,8 @@
         padding: 0;
       }
       body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f9;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        /* background-color: #f4f4f9; */
         margin: 0;
         padding: 0;
       }
@@ -54,8 +54,9 @@
         text-align: flex-start;
       }
       .cta {
-        background-color: #ff8c00;
-        color: white;
+        background-color: #fff;
+        color: #000;
+        font-weight: bold;
         padding: 15px 30px;
         border: none;
         font-size: 18px;
@@ -106,6 +107,49 @@
         text-decoration: none;
         margin: 0 15px;
       }
+      .cta:hover {
+        background: #e4e4e4;
+        transform: scale(1.05);
+      }
+      .pricing-section {
+        text-align: center;
+        padding: 50px 20px;
+        background: #fff;
+      }
+      .pricing-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .pricing-card {
+        background: #ff8c02;
+
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        text-align: center;
+        color: #fff;
+      }
+      .pricing-card h3 {
+        margin: 0;
+        font-size: 1.5rem;
+      }
+      .pricing-card p {
+        font-size: 1rem;
+      }
+      .pricing-card .price {
+        font-size: 2rem;
+        font-weight: bold;
+        margin: 10px 0;
+      }
+      .cancellation-policy {
+        margin-top: 30px;
+        text-align: center;
+        font-size: 0.9rem;
+        color: #555;
+      }
 
       /* Responsive Design */
       @media (max-width: 768px) {
@@ -136,6 +180,16 @@
         #terms-of-service {
           height: 100% !important;
         }
+
+        .dsa {
+          max-width: 100% !important;
+        }
+        .qwa {
+          margin-bottom: 5% !important;
+        }
+        nav {
+          display: none !important;
+        }
       }
 
       @media (max-width: 480px) {
@@ -152,13 +206,22 @@
         #terms-of-service {
           height: 100%;
         }
+        .dsa {
+          max-width: 100% !important;
+        }
+        .qwa {
+          margin-bottom: 5% !important;
+        }
+        nav {
+          display: none !important;
+        }
       }
     </style>
   </head>
   <body>
     <header>
       <div class="logo">
-        <h3>Amazon Price Tracker</h3>
+        <h4>Ecommerce Product Tracker</h4>
       </div>
       <nav>
         <a href="/">Home</a>
@@ -169,7 +232,10 @@
     </header>
 
     <div class="container" style="margin-top: 3%">
-      <h1 style="text-align: center; font-size: 1.5em; margin-bottom: 1%">
+      <h1
+        class="qwa"
+        style="text-align: center; font-size: 2.3em; margin-bottom: 1%"
+      >
         Track Price Drops & Save Money!
       </h1>
       <p style="text-align: center; line-height: 1.5">
@@ -179,22 +245,18 @@
       </p>
 
       <!-- Hero section -->
-      <div
-        id="hero"
-        class="flex-container"
-        style="height: 100vh; margin-top: 5%"
-      >
+      <div id="hero" class="flex-container" style="margin-top: 5%">
         <div style="flex: 2">
-          <div class="benefits">
+          <div class="benefits" style="text-align: center; line-height: 1.8">
             <h3>How Our Amazon Price Tracker Helps You:</h3>
-            <ul style="line-height: 1.8">
-              <li>📦 Get notified when a product is back in stock.</li>
-              <li>🚫 Know immediately when a product goes out of stock.</li>
-              <li>
-                💰 Receive Email Alert when the product price drops to your
-                desired amount.
-              </li>
-            </ul>
+            <!-- <ul style="line-height: 1.8"> -->
+            <p>📦 Get notified when a product is back in stock.</p>
+            <p>🚫 Know immediately when a product goes out of stock.</p>
+            <p>
+              💰 Receive Email Alert when the product price drops to your
+              desired amount.
+            </p>
+            <!-- </ul> -->
             <p
               style="
                 color: green;
@@ -214,10 +276,23 @@
 
           <p style="text-align: center">
             <a
-              class="cta"
-              style="font-weight: 700"
-              href="https://buy.paddle.com/product/your_product_id"
-              >Subscribe for $20/month</a
+              style="
+                font-weight: 700;
+
+                background-color: #ff8c02;
+                color: #fff;
+                font-weight: bold;
+                padding: 15px 30px;
+                border: none;
+                font-size: 18px;
+                cursor: pointer;
+                margin: 20px 0;
+                border-radius: 5px;
+                text-decoration: none;
+                display: inline-block;
+              "
+              href="#pricing"
+              >Subscribe Now</a
             >
           </p>
         </div>
@@ -234,49 +309,63 @@
       </div>
 
       <!-- Pricing -->
-      <div
+      <section
         id="pricing"
+        class="pricing-section"
         style="
-          border-top: 1px solid #e4e4e4;
           padding-top: 5%;
-          height: 100vh;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          gap: 20px;
-          font-size: 1.1em;
-          line-height: 1.5;
+          padding-bottom: 5%;
+          border-top: 1px solid #e4e4e4;
         "
       >
-        <h1>Pricing</h1>
-
-        <p>
-          Amazon Price Tracker is available for a flat rate of
-          <strong>$20 per month</strong>.
+        <h2>Pricing Plans</h2>
+        <p style="margin-bottom: 3%; margin-top: 1%" ;>
+          Choose the best plan that fits your needs
         </p>
-        <p>
-          Enjoy automatic price monitoring and instant notifications for Amazon
-          products.
-        </p>
-
-        <p style="text-align: center">
-          <a
-            class="cta"
-            style="font-weight: 700"
-            href="https://buy.paddle.com/product/your_product_id"
-            >Subscribe for $20/month</a
+        <div class="pricing-container">
+          <div class="pricing-card">
+            <h3>Basic</h3>
+            <p>Track up to 20 Amazon product URLs</p>
+            <p class="price">$20/mo</p>
+            <a href="#" class="cta">Subscribe</a>
+          </div>
+          <div class="pricing-card">
+            <h3>Pro</h3>
+            <p>Track up to 50 Amazon product URLs</p>
+            <p class="price">$50/mo</p>
+            <a href="#" class="cta">Subscribe</a>
+          </div>
+        </div>
+        <div
+          class="cancellation-policy"
+          style="display: flex; align-items: center; justify-content: center"
+        >
+          <p
+            class="dsa"
+            style="
+              text-align: center;
+              max-width: 50%;
+              font-size: 0.9em;
+              line-height: 1.7;
+              color: #555;
+            "
           >
-        </p>
-      </div>
+            Subscriptions are auto-renewed unless canceled before the next
+            billing cycle. Users can cancel anytime through their Paddle account
+            settings or by sending an email to
+            <span style="font-weight: bold">ecom.bot.checker@gmail.com</span>.
+          </p>
+        </div>
+      </section>
 
       <!-- privacy policy -->
       <div
         id="privacy-policy"
         style="
           border-top: 1px solid #e4e4e4;
+
           padding-top: 5%;
-          height: 100vh;
+          padding-bottom: 5%;
           display: flex;
           justify-content: center;
 
@@ -292,18 +381,20 @@
             gap: 20px;
             max-width: 600px;
             line-height: 1.5;
+            color: #343434;
           "
         >
-          <h1>Privacy Policy</h1>
+          <h1 style="text-align: center">
+            Ecommerce Product Tracker Privacy Policy
+          </h1>
 
           <div
             style="align-items: center; display: flex; flex-direction: column"
           >
-            <h4>1. Introduction</h4>
-            <p style="text-align: center">
-              Welcome to Ecom Tracker. Your privacy is important to us. This
-              Privacy Policy explains how we collect, use, and protect your
-              personal information.
+            <p style="text-align: center; color: #343434">
+              Welcome to Ecommerce Product Tracker. Your privacy is important to
+              us. This Privacy Policy explains how we collect, use, and protect
+              your personal information.
             </p>
           </div>
 
@@ -315,7 +406,7 @@
               gap: 10px;
             "
           >
-            <h4>2. Information We Collect</h4>
+            <h4>1. Information We Collect</h4>
             <ul>
               <li style="text-align: center">
                 <strong>Personal Information:</strong> When you subscribe, we
@@ -333,7 +424,7 @@
               gap: 5px;
             "
           >
-            <h4>3. How We Use Your Information</h4>
+            <h4>2. How We Use Your Information</h4>
             <p>We use your information to:</p>
             <ul>
               <li>Send daily price alerts and updates.</li>
@@ -348,7 +439,7 @@
               gap: 5px;
             "
           >
-            <h4>4. Data Protection</h4>
+            <h4>3. Data Protection</h4>
             <p style="text-align: center">
               We implement security measures to protect your personal data from
               unauthorized access or misuse.
@@ -363,7 +454,7 @@
               gap: 5px;
             "
           >
-            <h4>5. Third-Party Services</h4>
+            <h4>4. Third-Party Services</h4>
             <p style="text-align: center">
               We may use third-party tools for analytics and email
               notifications. These services have their own privacy policies.
@@ -377,7 +468,7 @@
               gap: 5px;
             "
           >
-            <h4>6. Your Rights</h4>
+            <h4>5. Your Rights</h4>
             <p style="text-align: center">
               You have the right to access, update, or delete your data. Contact
               us at ecom.bot.checker@gmail.com to request changes.
@@ -392,7 +483,7 @@
               gap: 5px;
             "
           >
-            <h4>7. Contact Us</h4>
+            <h4>6. Contact Us</h4>
             <p>
               Email us at
               <span style="font-weight: bold">ecom.bot.checker@gmail.com</span>
@@ -405,16 +496,17 @@
       <div
         id="terms-of-service"
         style="
-          height: 100vh;
+          border-top: 1px solid #e4e4e4;
           display: flex;
           justify-content: center;
-
+          padding-top: 5%;
+          padding-bottom: 5%;
           font-size: 1.1em;
+          color: #343434;
         "
       >
         <div
           style="
-            height: 100vh;
             align-items: center;
             display: flex;
             flex-direction: column;
@@ -432,9 +524,10 @@
               align-items: center;
             "
           >
-            <h1>Terms & Conditions</h1>
+            <h1 style="text-align: center">Terms & Conditions</h1>
+
             <p style="text-align: center">
-              These Terms and Conditions govern the use of the Amazon Price
+              These Terms and Conditions govern the use of the Ecommerce Product
               Tracker service.
             </p>
           </div>
@@ -449,8 +542,8 @@
           >
             <h4>1. Company Information</h4>
             <p style="text-align: center">
-              This service is provided by Amazon Price Tracker, registered in
-              Nigeria.
+              This service is provided by Ecommerce Product Tracker, registered
+              in Nigeria.
             </p>
           </div>
           <div
@@ -463,8 +556,9 @@
           >
             <h4>2. Service Description</h4>
             <p style="text-align: center">
-              Amazon Price Tracker is a subscription-based service that monitors
-              Amazon product prices and notifies users of price changes.
+              Ecommerce Product Tracker is a subscription-based service that
+              monitors Amazon product prices and notifies users of price
+              changes.
             </p>
           </div>
 
@@ -478,8 +572,8 @@
           >
             <h4>3. Subscription & Billing</h4>
             <p style="text-align: center">
-              The service costs $20 per month. Payments are processed securely
-              via Paddle.
+              The service costs $20 per month for Basic Plan and $50 for Pro
+              Plan. Payments are processed securely via Paddle.
             </p>
           </div>
 
@@ -508,8 +602,8 @@
           >
             <h4>5. Refund Policy</h4>
             <p style="text-align: center">
-              Refunds are available within 7 days under the conditions outlined
-              in our
+              All payments for Ecommerce Product Tracker subscriptions are
+              non-refundable, read more
               <a href="#refund-policy">Refund Policy</a>.
             </p>
           </div>
@@ -525,16 +619,18 @@
         id="refund-policy"
         style="
           padding-top: 5%;
-          height: 100vh;
+          padding-bottom: 5%;
+          border-top: 1px solid #e4e4e4;
+
           display: flex;
           justify-content: center;
-
+          color: #343434;
           font-size: 1.1em;
         "
       >
         <div
+          class="refund-policy"
           style="
-            height: 100vh;
             align-items: center;
             display: flex;
             flex-direction: column;
@@ -546,27 +642,18 @@
         >
           <h1>Refund Policy</h1>
           <p style="text-align: center">
-            We offer refunds under the following conditions:
-          </p>
-          <ul style="line-height: 1.6; text-align: center">
-            <li>If the service does not function as described.</li>
-            <li>If technical issues prevent access to the service.</li>
-            <li>Refund requests must be made within 7 days of purchase.</li>
-          </ul>
-          <p style="text-align: center">
-            For refund requests, contact ecom.bot.checker@gmail.com.
+            All payments for
+            <strong>Ecommerce Product Tracker</strong> subscriptions are
+            non-refundable. Once a payment has been processed, it cannot be
+            refunded, except where required by law.
+            <br />
+            <br />
+
+            If you experience any issues, please contact
+            <strong>ecom.bot.checker@gmail.com</strong> for assistance.
           </p>
         </div>
       </div>
     </div>
-
-    <!-- <footer>
-      <p>
-        By using our service, you agree to our
-        <a href="/pricing.html">Pricing,</a>
-        <a href="/terms-of-service.html">Terms & Conditions,</a> and
-        <a href="/refund-policy.html">Refund Policy.</a>
-      </p>
-    </footer> -->
   </body>
 </html>
